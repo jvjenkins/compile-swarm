@@ -1,6 +1,7 @@
 #!/bin/bash
 
-version=1.1.0
+# compile swarm 1.1.0 by default
+version=${1:-1.1.0}
 
 wget https://github.com/docker/swarm/archive/v$version.tar.gz 
 
