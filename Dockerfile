@@ -6,7 +6,7 @@ WORKDIR /root
 
 RUN apt-get update && apt-get install -y wget git
 
-# 安装go
+# install go
 RUN wget https://storage.googleapis.com/golang/go1.5.3.linux-amd64.tar.gz && \
     tar -C /usr/local -xzf go1.5.3.linux-amd64.tar.gz && \
     rm -f go1.5.3.linux-amd64.tar.gz
@@ -22,13 +22,3 @@ RUN mkdir -p /root/work && \
 COPY compile.sh /root/compile.sh
 
 RUN chmod +x /root/compile.sh
-
-# 编译swarm
-# RUN wget https://github.com/docker/swarm/archive/v1.1.0.tar.gz && \ 
-#     tar -xzvf v1.1.0.tar.gz && \ 
-#     rm -f v1.1.0.tar.gz && \
-#     mkdir -p /root/work/src/github.com/docker/ && \ 
-#     mv swarm-1.1.0 /root/work/src/github.com/docker/swarm && \ 
-#     cd /root/work/src/github.com/docker/swarm && godep go install . 
-
-# sudo docker build -t kiwenlau/compile-swarm .

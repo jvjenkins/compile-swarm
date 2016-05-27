@@ -18,4 +18,6 @@ cd /root/work/src/github.com/docker/swarm
 echo -e "\n\ncompile swarm $version..."
 godep go install .
 
+echo -e "\n\ncompile swarm $version success!\n"
+
 mv /root/work/bin/swarm /binary 
